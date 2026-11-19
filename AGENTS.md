@@ -1,79 +1,49 @@
-# CLAUDE.md
+# AGENTS.md
 
-## O que é este projeto
+## Sobre o projeto
 
-`cursodev-ia` é um projeto de aprendizado: um site simples de uma única
-página, construído passo a passo durante um curso de desenvolvimento
-com IA. Ele serve como base para praticar o fluxo completo de um
-projeto real: código, Git, GitHub e um framework moderno.
+`cursodev-ia` é um projeto de aprendizado de desenvolvimento web com IA.
+Ele serve para praticar, passo a passo, os fundamentos e o fluxo de um
+projeto real: código, Git, GitHub e um framework web moderno.
 
-## Estado atual
+## Princípios de trabalho
 
-- Site de página única (rota `/`) exibindo apenas uma lista de nomes:
-  - Jonil de Morais
-  - Maria de Jesus
-  - Shrek Rex
-- A lista é exibida centralizada (horizontal e verticalmente), com
-  fonte grande (`clamp(2rem, 8vw, 4.5rem)`), em negrito e em
-  maiúsculas (`text-transform: uppercase`).
-- O conteúdo mínimo é proposital: o projeto evolui aos poucos,
-  um passo de cada vez.
+- **Simplicidade acima de tudo**: implementar o mínimo de código, de
+  arquivos e de dependências necessário para cumprir o pedido.
+- Trabalhar estritamente dentro do escopo solicitado: não alterar
+  conteúdo, comportamento, visual ou estrutura fora do que foi pedido.
+- Não introduzir linguagens, frameworks, bibliotecas, abstrações ou
+  serviços (principalmente pagos ou com cota limitada) sem necessidade
+  real ou pedido explícito.
+- Seguir os padrões e as convenções que já existem no código e as
+  convenções oficiais atuais do framework em uso. Por exemplo, no
+  Next.js, preferir Server Components e usar Client Components apenas
+  quando houver interatividade no navegador.
+- Verificar cada alteração com os comandos de teste/build disponíveis
+  no projeto antes de considerá-la concluída.
 
-## Stack
+## Fontes de verdade
 
-- **Next.js 16.2.12** (App Router, convenções modernas)
-- **React 19.2.9** / **React DOM 19.2.9**
-- JavaScript puro (sem TypeScript), sem Tailwind, sem bibliotecas extras
-- Server Components por padrão (sem `"use client"`)
+Versões de dependências, scripts, estrutura de pastas e estado do
+código mudam com o tempo — por isso, este arquivo não os registra.
+Antes de trabalhar, consulte sempre o próprio repositório:
 
-## Estrutura
+- `package.json` para a stack, as versões e os scripts atuais;
+- o código-fonte para a estrutura e os padrões vigentes;
+- o `README.md` para instruções de uso do projeto.
 
-```
-cursodev-ia/
-├── app/
-│   ├── layout.js    # Layout raiz: <html lang="pt-BR">, título via metadata
-│   ├── page.js      # Página inicial: apenas a lista de nomes
-│   └── globals.css  # Estilos globais da lista
-├── package.json
-├── package-lock.json
-└── README.md
-```
+## Comunicação e fluxo no Git
 
-## Como rodar
-
-```bash
-npm install
-npm run dev    # http://localhost:3000
-npm run build  # build de produção
-npm start      # serve o build de produção
-```
-
-## Histórico (como o projeto chegou até aqui)
-
-1. Começou como um site em HTML puro (`index.html`), com a mesma lista
-   de nomes centralizada, em fonte grande e maiúsculas.
-2. Foi publicado no GitHub via commit → push → Pull Request → merge
-   na branch `main`.
-3. Foi migrado para Next.js 16.2.12, mantendo o visual idêntico e
-   removendo o `index.html` antigo.
-
-## Convenções e preferências de trabalho
-
-- **Simplicidade acima de tudo**: mínimo de código e de arquivos
-  necessário para cumprir o pedido. Não adicionar dependências,
-  pastas ou abstrações sem necessidade.
-- **Trabalho feito neste ambiente (com a IA), não no GitHub Codespaces** —
-  o Codespace consome cota paga do GitHub e não deve ser usado neste
-  projeto. O GitHub é apenas para guardar e visualizar o código
-  (repositório remoto gratuito).
-- **Publicação das alterações**: commit na branch de trabalho, push
-  para o GitHub e merge na `main` via Pull Request.
-- Preservar sempre o conteúdo e o visual da página inicial (lista de
-  nomes centralizada, fonte grande, maiúsculas), salvo pedido explícito
-  de mudança.
 - Idioma do projeto e da comunicação: **português (pt-BR)**.
+- Registrar as alterações em commits claros e objetivos.
+- Publicar o trabalho pelo fluxo do repositório: branch de trabalho,
+  push para o GitHub e integração à `main` via Pull Request.
 
-## Próximos passos possíveis
+## Manutenção deste arquivo
 
-- Publicar o site no ar gratuitamente (a Vercel é a plataforma natural
-  para projetos Next.js e já está conectada a esta conversa).
+Manter neste arquivo somente orientações duráveis e genéricas, úteis
+para qualquer agente em qualquer sessão. Não registrar aqui: estado
+momentâneo do projeto, histórico de mudanças, listas de tarefas,
+próximos passos, versões fixas de dependências ou detalhes de conteúdo
+de páginas — essas informações pertencem ao código, aos commits e às
+issues/PRs.
