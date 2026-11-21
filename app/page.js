@@ -1,6 +1,9 @@
+import { Suspense } from "react";
 import ConfettiExplosion from "./confetti";
 
 export const dynamic = "force-dynamic";
+
+const numberFormatter = new Intl.NumberFormat("pt-BR");
 
 async function getTotalContents() {
   try {
@@ -18,9 +21,24 @@ async function getTotalContents() {
   }
 }
 
-export default async function Home() {
+async function TotalContents() {
   const total = await getTotalContents();
 
+  return (
+    <p className="total">
+      {total === null ? (
+        "Total de conteúdos publicados: indisponível no momento"
+      ) : (
+        <>
+          Total de conteúdos publicados no TabNews:{" "}
+          <strong>{numberFormatter.format(total)}</strong>
+        </>
+      )}
+    </p>
+  );
+}
+
+export default function Home() {
   return (
     <main>
       <ConfettiExplosion />
@@ -33,16 +51,13 @@ export default async function Home() {
         conteúdos com valor concreto.
       </p>
 
-      <p className="total">
-        {total === null ? (
-          "Total de conteúdos publicados: indisponível no momento"
-        ) : (
-          <>
-            Total de conteúdos publicados no TabNews:{" "}
-            <strong>{new Intl.NumberFormat("pt-BR").format(total)}</strong>
-          </>
-        )}
-      </p>
+      <Suspense
+        fallback={
+          <p className="total">Total de conteúdos publicados: carregando…</p>
+        }
+      >
+        <TotalContents />
+      </Suspense>
 
       <a href="https://www.tabnews.com.br" target="_blank" rel="noreferrer">
         Acesse o site oficial: tabnews.com.br
