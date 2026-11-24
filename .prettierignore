@@ -1,0 +1,12 @@
+# Dependências e artefatos de build
+node_modules
+.next
+out
+build
+
+# Arquivos gerados / de terceiros (não formatar)
+package-lock.json
+skills-lock.json
+.agents
+agent
+.claude
