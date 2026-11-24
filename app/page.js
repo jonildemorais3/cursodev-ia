@@ -9,7 +9,7 @@ async function getTotalContents() {
   try {
     const response = await fetch(
       "https://www.tabnews.com.br/api/v1/contents?strategy=new&per_page=1",
-      { cache: "no-store" }
+      { cache: "no-store" },
     );
 
     if (!response.ok) return null;
@@ -47,8 +47,8 @@ export default function Home() {
 
       <p>
         Estamos neste exato momento reconstruindo o TabNews, um lugar na
-        internet para quem trabalha com tecnologia e precisa consumir
-        conteúdos com valor concreto.
+        internet para quem trabalha com tecnologia e precisa consumir conteúdos
+        com valor concreto.
       </p>
 
       <Suspense
